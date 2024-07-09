@@ -27,17 +27,19 @@ const Profile = () => {
   };
 
   return (
-    <div className="bg-white min-h-screen flex flex-col items-center justify-center p-4">
-      <div className="max-w-3xl w-full bg-white rounded-lg shadow-md p-8 space-y-6">
+  
+
+    <div className=" min-h-screen flex flex-col items-center justify-center p-4">
+      <div className="max-w-xl w-full bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-lg shadow-md p-4    min-h-screen rounded-lg shadow-md p-8 space-y-6">
       {/* LOGOUT BUTTON */}
-      <div className="mt-6 flex justify-center">
+      {/* <div className="mt-6 flex justify-center">
           <button
             onClick={handleLogout}
             className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md focus:outline-none"
           >
             Logout
           </button>
-        </div>
+        </div> */}
 
         <div className="flex items-center space-x-4">
           <img
@@ -47,13 +49,13 @@ const Profile = () => {
           />
           <div>
             <h1 className="text-xl font-semibold">Jane Doe</h1>
-            <p className="text-gray-500">@janedoe</p>
+            <p className="text-azure-300">@janedoe</p>
           </div>
         </div>
 
         <div className="mt-6">
           <h2 className="text-lg font-semibold">Bio</h2>
-          <p className="text-gray-700 mt-2">
+          <p className="text-azure-500 mt-2">
             Software engineer passionate about web development. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
           </p>
         </div>
@@ -77,8 +79,8 @@ const Profile = () => {
           <div className="space-y-4 mt-4">
             {posts.map((post) => (
               <div key={post.id} className="border p-4 rounded-lg">
-                <p className="text-gray-700">{post.content}</p>
-                <p className="text-gray-500 text-sm mt-2">{post.timestamp}</p>
+                <p className="text-azure-500">{post.content}</p>
+                <p className="text-azure-500 text-sm mt-2">{post.timestamp}</p>
               </div>
             ))}
           </div>

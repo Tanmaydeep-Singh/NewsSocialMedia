@@ -10,7 +10,14 @@ const App = () => {
   const isAuthenticated = !!localStorage.getItem('token');
 
   return (
-    <>    
+
+    <div
+    className="h-screen bg-cover bg-center"
+    style={{ backgroundImage: `url(${require("./Assets/rhamely-Qg7V6ZTPGqs-unsplash.jpg")})` }} // Adjust the path as needed
+  >
+    <div className="flex items-center justify-center h-full">
+    
+    
     <Router>
       <Routes>
         {/* ERROR */}
@@ -28,7 +35,8 @@ const App = () => {
         <Route path="/" element={<Navigate to="/login" />} />
       </Routes>
     </Router>
-    </>
+    </div>
+  </div>
   );
 };
 

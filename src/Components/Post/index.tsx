@@ -25,9 +25,9 @@ const Post= () => {
   return (
     <div className="space-y-4">
     {posts.map((post) => (
-      <div key={post.id} className="border p-4 rounded-lg">
-        <p className="text-gray-700">{post.content}</p>
-        <p className="text-gray-500 text-sm mt-2">{post.timestamp}</p>
+      <div key={post.id} className="border p-4 rounded-lg text-azure-500">
+        <p >{post.content}</p>
+        <p className=" text-azure-500 text-sm mt-2">{post.timestamp}</p>
       </div>
     ))}
   </div>

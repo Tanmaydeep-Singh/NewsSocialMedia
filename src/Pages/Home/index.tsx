@@ -58,14 +58,13 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-gray-100 min-h-screen">
-            <SearchBar />
-
-      <div className="max-w-3xl mx-auto p-4">
+    <div className="  bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-lg shadow-md p-4    min-h-screen">
+      <SearchBar />
+      <div className="max-w-xl mx-auto p-4">
         <h1 className="text-2xl font-semibold mb-4">Home</h1>
         <div className="space-y-4">
           {posts.map((post) => (
-            <div key={post.id} className="bg-white rounded-lg shadow-md p-4">
+            <div key={post.id} className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-lg shadow-md p-4 border border-gray-200">
               <div className="flex items-center space-x-4">
                 <img
                   className="w-12 h-12 rounded-full"
@@ -74,10 +73,10 @@ const Home: React.FC = () => {
                 />
                 <div>
                   <p className="font-semibold">{followedUsers.find(user => user.posts.some(p => p.id === post.id))?.username}</p>
-                  <p className="text-gray-500 text-sm">{post.timestamp}</p>
+                  <p className="text-azure-500 text-sm">{post.timestamp}</p>
                 </div>
               </div>
-              <p className="text-gray-700 mt-2">{post.content}</p>
+              <p className="text-azure-500 mt-2">{post.content}</p>
             </div>
           ))}
         </div>
