@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Home from './Pages/Home';
+import Login from './Pages/Login';
+import Signup from './Pages/Signup';
+import ProtectedRoute from './Utility/protectedRouteWrapper';
+import Profile from './Pages/Profile';
 
-function App() {
+const App = () => {
+  const isAuthenticated = !!localStorage.getItem('token');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>    
+    <Router>
+      <Routes>
+        {/* ERROR */}
+        <Route path="/*" element={isAuthenticated ? <Navigate to="/home" /> : <Login />} />
+
+        {/* AUTH */}
+        <Route path="/login" element={isAuthenticated ? <Navigate to="/home" /> : <Login />} />
+        <Route path="/signup" element={isAuthenticated ? <Navigate to="/home" /> : <Signup />} />
+        
+        {/* PROFILE */}
+        <Route path="/:username" element={<Profile/>} />
+        
+
+        <Route path="/home" element={<ProtectedRoute><Home/></ProtectedRoute>} />
+        <Route path="/" element={<Navigate to="/login" />} />
+      </Routes>
+    </Router>
+    </>
   );
-}
+};
 
 export default App;
