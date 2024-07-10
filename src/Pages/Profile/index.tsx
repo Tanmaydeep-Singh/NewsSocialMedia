@@ -44,19 +44,19 @@ const Profile = () => {
         <div className="flex items-center space-x-4">
           <img
             className="w-20 h-20 rounded-full"
-            src="https://randomuser.me/api/portraits/women/27.jpg"
+            src={require('../../Assets/juairia-islam-shefa-5NqOEeBBbws-unsplash.jpg')}
             alt="Avatar"
           />
           <div>
-            <h1 className="text-xl font-semibold">Jane Doe</h1>
-            <p className="text-azure-300">@janedoe</p>
+            <h1 className="text-xl font-semibold">Tanmaydeep Singh</h1>
+            <p className="text-azure-300">@SinghTanmaydeep</p>
           </div>
         </div>
 
         <div className="mt-6">
           <h2 className="text-lg font-semibold">Bio</h2>
           <p className="text-azure-500 mt-2">
-            Software engineer passionate about web development. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+            Software engineer passionate about web development.
           </p>
         </div>
 
@@ -65,11 +65,11 @@ const Profile = () => {
           <div className="flex mt-2">
             <div className="mr-8">
               <p className="font-semibold">Followers</p>
-              <p>1000</p>
+              <p>0</p>
             </div>
             <div>
               <p className="font-semibold">Following</p>
-              <p>500</p>
+              <p>0</p>
             </div>
           </div>
         </div>
